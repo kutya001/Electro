@@ -733,6 +733,98 @@
         /* CONTACT */
         .contact { background: var(--dark-2); }
 
+        /* BOOKING CTA */
+        .booking-cta {
+            background: linear-gradient(135deg, rgba(245, 166, 35, 0.1), rgba(0, 180, 216, 0.1));
+            border: 1px solid rgba(245, 166, 35, 0.2);
+            border-radius: 20px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            margin: 2rem auto;
+            max-width: 1200px;
+        }
+
+        .booking-cta-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .booking-qr-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .booking-qr {
+            width: 180px;
+            height: 180px;
+            object-fit: contain;
+            border-radius: 12px;
+            border: 2px solid rgba(245, 166, 35, 0.3);
+            background: #fff;
+            padding: 8px;
+        }
+
+        .booking-qr-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .booking-cta-title {
+            font-size: clamp(1.4rem, 4vw, 2rem);
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .booking-cta-title span {
+            background: linear-gradient(135deg, var(--primary), #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .booking-cta-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .booking-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: #000;
+            font-weight: 700;
+            font-size: 1rem;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 30px var(--glow);
+            max-width: 320px;
+            width: 100%;
+        }
+
+        .booking-cta-btn:hover, .booking-cta-btn:active {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(245, 166, 35, 0.5);
+        }
+
+        .booking-cta-btn svg {
+            width: 22px;
+            height: 22px;
+            fill: #000;
+        }
+
         .contact-grid {
             max-width: 1200px;
             margin: 0 auto;
@@ -1155,6 +1247,14 @@
             .advantages-grid { grid-template-columns: repeat(3, 1fr); }
             .master-card { flex-direction: row; text-align: left; }
             .contact-grid { display: grid; grid-template-columns: 1fr 1fr; }
+            .booking-cta-content {
+                flex-direction: row;
+                justify-content: space-between;
+                text-align: left;
+            }
+            .booking-qr-wrapper {
+                flex-shrink: 0;
+            }
             .map-container { height: 400px; }
             section { padding: 6rem 2rem; }
             .wa-modal { border-radius: 24px; margin: auto; }
@@ -1513,6 +1613,25 @@
             <div class="section-badge">📍 Контакты</div>
             <h2 class="section-title">Как нас <span>найти</span></h2>
         </div>
+        
+        <!-- BOOKING CTA -->
+        <div class="booking-cta anim anim-up">
+            <div class="booking-cta-content">
+                <div>
+                    <h3 class="booking-cta-title">Оставить заявку на <span>запись</span></h3>
+                    <p class="booking-cta-desc">Заполните форму онлайн и мы свяжемся с вами для подтверждения записи</p>
+                    <a href="https://forms.gle/9gftUkuSb63vdjv97" target="_blank" class="booking-cta-btn">
+                        <svg viewBox="0 0 24 24"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+                        Записаться онлайн
+                    </a>
+                </div>
+                <div class="booking-qr-wrapper">
+                    <img src="qr-code.png" alt="QR код для записи" class="booking-qr">
+                    <span class="booking-qr-label">Наведите камеру для быстрой записи</span>
+                </div>
+            </div>
+        </div>
+        
         <div class="contact-grid">
             <div class="contact-info">
                 <div class="contact-item anim anim-up anim-delay-1">
